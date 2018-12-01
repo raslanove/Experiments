@@ -1,19 +1,71 @@
 html, body { height: 100%; }
 body { margin: 0; }
 
-div {
+#myDiv {
     width: 200px;
     height: 200px;
-    background-color: #000;
+    background-color: gray;
     transition: background-color 1s;
 }
 
-div:hover {
-    background-color: #f00;
-    transition: background-color 10s;
+#myDiv:hover {
+    background-color: red;
 }
 
-@keyframes changeColor {
-      0% { background-color: #000; }
-    100% { background-color: #f00; }
+/* CSS to be injected to force the borders. */
+
+html { 
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;  
+    width: calc(100vw - 10px) !important;
+    height: calc(100vh - 10px) !important;
 }
+
+html::before { 
+    content: "" !important;
+    display: block !important;
+    position: fixed !important;
+    left: 0px !important;
+    top: 0px !important;
+    width: 100vw !important;
+    height: 5px !important;
+    background: pink !important;
+    z-index: 2147483647 !important;
+}
+
+html::after { 
+    content: "" !important;
+    display: block !important;
+    position: fixed !important;
+    left: 0px !important;
+    bottom: 0px !important;
+    width: 100vw !important;
+    height: 5px !important;
+    background: green !important;
+    z-index: 2147483647 !important;
+}
+
+body::before {
+    content: "" !important;
+    display: block !important;
+    position: fixed !important;
+    left: 0px !important;
+    top: 0px !important;
+    width: 5px !important;
+    height: 100vw !important;
+    background: yellow !important;
+    z-index: 2147483647 !important;
+}
+
+body::after {
+    content: "" !important;
+    display: block !important;
+    position: fixed !important;
+    right: 0px !important;
+    top: 0px !important;
+    width: 5px !important;
+    height: 100vw !important;
+    background: purple !important;
+    z-index: 2147483647 !important;
+}
+
