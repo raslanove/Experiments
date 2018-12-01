@@ -1,0 +1,19 @@
+html, body { height: 100%; }
+body { margin: 0; }
+
+div {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+    transition: background-color 1s;
+}
+
+div:hover {
+    background-color: #f00;
+    transition: background-color 10s;
+}
+
+@keyframes changeColor {
+      0% { background-color: #000; }
+    100% { background-color: #f00; }
+}
